@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Headlights",
+        "img": "https://m.media-amazon.com/images/I/61X6mULoYKL._AC_SS450_.jpg",
+        "price": 5000,
+        "minimumOrder": 50,
+        "availableQuantity": 900,
+        "description": "The primary task of headlights on cars is to illuminate the roadway and facilitate fatigue-free and safe driving. Headlights and their light sources are thus vehicle components that are relevant to safety..."
+    },
+    {
+        "id": 2,
+        "name": "Looking Glass",
+        "img": "https://m.media-amazon.com/images/I/81kP-T85kTL._AC_SS450_.jpg",
+        "price": 2500,
+        "minimumOrder": 50,
+        "availableQuantity": 1000,
+        "description": "Looking glass is a very important part of a car. You know, if you dont have a looking glass in your car, the traffic police can stop you and even fine you. In many countries, it is a law to properly attach looking glass..."
+    },
+    {
+        "id": 3,
+        "name": "Car Door",
+        "img": "https://media.istockphoto.com/photos/modern-red-car-door-isolated-on-white-background-with-clipping-path-picture-id1332309826?b=1&k=20&m=1332309826&s=170667a&w=0&h=sgzR3dIbJnBcQBFJ00dPYnKx0N-LiOl_ebYrTu02t4I=",
+        "price": 3800,
+        "minimumOrder": 50,
+        "availableQuantity": 700,
+        "description": "A major safety issue with opened vehicle doors is the assumption at night vehicle doors can provide a warning to other vehicle drivers. It is estimated over 50 percent of all vehicle doors have nothing applied to the interior of the vehicle door such as light and/or a reflector."
+    },
+    {
+        "id": 4,
+        "name": "Car Bonnet",
+        "img": "https://www.kindpng.com/picc/m/40-407226_panel-front-hood-suzuki-alto-hd-png-download.png",
+        "price": 1200,
+        "minimumOrder": 50,
+        "availableQuantity": 2500,
+        "description": "A car bonnet is the metal part that covers the engine of an automobile. The term car bonnet is a British term, used primarily in England, Ireland, Scotland, Wales, India, New Zealand, Australia, etc. Bonnet comes from the Old French word bonet, which means cloth used as a headdress."
+    },
+    {
+        "id": 5,
+        "name": "Car Seat",
+        "img": "https://images.maxi-cosi.com/dorel-public-storage-prod/catalog/product/cache/655f0b719d7fda71d9d06b11a51a9714/8/0/8037510110_2020_maxicosi_carseat_toddlercarseat_nomad_grey_authenticgrey_3qrtleft.png",
+        "price": 3900,
+        "minimumOrder": 50,
+        "availableQuantity": 1500,
+        "description": "Baby car seat mold effects the plastic car safety seat molding production output a lot. High efficiency cooling system for the plastic car safety seat mould will shorten the shot circle, as a result, save more machining cost and time. JMT concerns a lot on mold cooling system and production stability."
+    },
+    {
+        "id": 6,
+        "name": "Car Exhaust",
+        "img": "https://res.cloudinary.com/hvwckxprc/image/fetch/c_limit,q_auto:good,w_1200/https://d2bythind2nctn.cloudfront.net/media/uk/cms/exhaust-back-box_dd53058360.png",
+        "price": 300,
+        "minimumOrder": 50,
+        "availableQuantity": 3000,
+        "description": "Each time your car runs, inside the engine there are thousands of small explosions happening. Each explosion produces power. It does this when it pushes against the pistons of the engine.A side effect of the explosions is that, besides producing power, they produce leftover gas too."
+    }
+]
