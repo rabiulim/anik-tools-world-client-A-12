@@ -11,6 +11,7 @@ import ToolBuy from './components/Home/ToolBuy';
 import Login from './components/Login/Login';
 import RequireAuth from './components/Login/RequireAuth';
 import SignUp from './components/Login/SignUp';
+import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/dashboard/myreviews' element={<MyReviews />} ></Route>
           <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
