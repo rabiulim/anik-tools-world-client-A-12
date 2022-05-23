@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Headlights",
-        "img": "https://m.media-amazon.com/images/I/61X6mULoYKL._AC_SS450_.jpg",
+        "name": "Crimping Tools",
+        "img": "https://media.cablematic.com/__sized__/images_1000/ht00400-01-thumbnail-1080x1080-70.jpg",
         "price": 5000,
         "minimumOrder": 50,
         "availableQuantity": 900,
-        "description": "The primary task of headlights on cars is to illuminate the roadway and facilitate fatigue-free and safe driving. Headlights and their light sources are thus vehicle components that are relevant to safety..."
+        "description": "The primary task of Crimping Tools on cars is to illuminate the roadway and facilitate fatigue-free and safe driving. Headlights and their light sources are thus vehicle components that are relevant to safety..."
     },
     {
         "id": 2,
-        "name": "Looking Glass",
-        "img": "https://m.media-amazon.com/images/I/81kP-T85kTL._AC_SS450_.jpg",
+        "name": "Metal Nibbling Tool",
+        "img": "https://m.media-amazon.com/images/I/6133Ebd1abL._AC_SL1500_.jpg",
         "price": 2500,
         "minimumOrder": 50,
         "availableQuantity": 1000,
