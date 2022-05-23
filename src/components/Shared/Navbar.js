@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
 
+    console.log(user)
     const logOut = () => {
         signOut(auth);
     }
@@ -34,7 +35,7 @@ const Navbar = () => {
                 </label>)}
 
             </div>
-            <a className="btn btn-ghost mx-auto normal-case text-xl">Abdullah</a>
+            <NavLink to="/" className="btn btn-ghost mx-auto normal-case text-xl">Anik Tools World</NavLink>
             <div className="navbar-end">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -52,7 +53,7 @@ const Navbar = () => {
             </div>
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar mx-auto">
                 <div className="w-10  rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                    <img src={user?.photoURL} alt="" />
                 </div>
             </label>
         </div>
