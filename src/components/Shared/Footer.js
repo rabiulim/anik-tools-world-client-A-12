@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer class="footer grid-rows-2 p-10 bg-neutral text-neutral-content">
+        <footer class="footer p-10 bg-secondary text-base-content">
             <div>
                 <span class="footer-title">Services</span>
                 <a class="link link-hover">Branding</a>
@@ -24,27 +24,19 @@ const Footer = () => {
                 <a class="link link-hover">Cookie policy</a>
             </div>
             <div>
-                <span class="footer-title">Social</span>
-                <a class="link link-hover">Twitter</a>
-                <a class="link link-hover">Instagram</a>
-                <a class="link link-hover">Facebook</a>
-                <a class="link link-hover">Github</a>
-            </div>
-            <div>
-                <span class="footer-title">Explore</span>
-                <a class="link link-hover">Features</a>
-                <a class="link link-hover">Enterprise</a>
-                <a class="link link-hover">Security</a>
-                <a class="link link-hover">Pricing</a>
-            </div>
-            <div>
-                <span class="footer-title">Apps</span>
-                <a class="link link-hover">Mac</a>
-                <a class="link link-hover">Windows</a>
-                <a class="link link-hover">iPhone</a>
-                <a class="link link-hover">Android</a>
+                <span class="footer-title">Newsletter</span>
+                <div class="form-control w-80">
+                    <label class="label">
+                        <span class="label-text">Enter your email address</span>
+                    </label>
+                    <div class="relative">
+                        <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
+                        <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                    </div>
+                </div>
             </div>
         </footer>
+
     );
 };
 
