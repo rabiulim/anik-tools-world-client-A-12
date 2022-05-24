@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const ToolBuy = () => {
     const { toolId } = useParams();
 
+    const [user] = useAuthState(auth)
+
     const [tool, setTool] = useState({})
 
-    console.log(tool)
+    console.log(user)
 
     useEffect(() => {
         const url = `http://localhost:5000/tool/${toolId}`
@@ -20,20 +24,25 @@ const ToolBuy = () => {
         const minimumQuantity = tool.minimumOrder;
         const inputQuantity = parseInt(event.target.quantity.value);
         const updateQuantity = minimumQuantity + inputQuantity
-        const url = `http://localhost:5000/tool/${toolId}`
+        const userName = user.displayName;
+        const userEmail = user.email;
+        const phoneNumber = event.target.phoneNumber.value;
+        const userInfo = { userName, userEmail, phoneNumber, inputQuantity }
+        const url = 'http://localhost:5000/userinfo'
         fetch(url, {
-            method: "PUT",
+            method: "POST",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({ quantity: updateQuantity })
+            body: JSON.stringify(userInfo)
 
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log('success', data)
+                alert('user  successfully added')
+                event.target.reset();
             })
-
     }
 
     return (
@@ -43,7 +52,9 @@ const ToolBuy = () => {
                 <p>{tool.description}</p>
                 <p className='text-xl font-bold'>Available Quantity:{tool?.availableQuantity}</p>
                 <p className='text-xl font-bold'>Minimum Order Quantity:{tool?.minimumOrder}</p>
+                <p>{user.displayName}</p>
                 <form onSubmit={handleBuyNow} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
+                    <input type="number" name='phoneNumber' placeholder="Plz Phone Number" class="input input-bordered input-primary w-full max-w-xs" />
                     <input type="number" name='quantity' placeholder="Plz Enter Quantity" class="input input-bordered input-primary w-full max-w-xs" />
                     <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" />
                 </form>
