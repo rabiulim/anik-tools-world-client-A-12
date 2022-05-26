@@ -13,7 +13,7 @@ const Tool = ({ tool }) => {
     }
 
     return (
-        <div class="card w-84 bg-base-100 shadow-xl">
+        <div class="card w-84 bg-base-200 shadow-xl">
             <figure class="px-10 pt-10">
                 <img src={img} alt="Shoes" class="rounded-xl" />
             </figure>
@@ -24,7 +24,7 @@ const Tool = ({ tool }) => {
                 <p className='text-xl'>Available Quantity:{tool?.availableQuantity}</p>
                 <p className='text-xl'>Price:{price}</p>
                 <div class="card-actions">
-                    <button class="btn btn-sm btn-primary w-full" onClick={() => navigateBuyPage(_id)}>Buy Now</button>
+                    <button class="btn btn-primary w-full px-10" onClick={() => navigateBuyPage(_id)}>Buy Now</button>
                 </div>
             </div>
         </div>
