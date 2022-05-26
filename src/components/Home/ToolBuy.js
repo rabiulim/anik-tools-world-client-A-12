@@ -64,9 +64,8 @@ const ToolBuy = () => {
         const product = tool.name;
         const price = tool.price;
         const userName = user.displayName;
-        const userEmail = user.email;
-        const phoneNumber = event.target.phoneNumber.value;
-        const orderInfo = { userName, userEmail, phoneNumber, orderQuantity, product, price }
+        const email = user.email;
+        const orderInfo = { userName, email, orderQuantity, product, price }
         const url = 'http://localhost:5000/order'
         fetch(url, {
             method: "POST",
@@ -85,21 +84,19 @@ const ToolBuy = () => {
     }
 
     return (
-        <div class="card mx-auto w-96 bg-base-100 shadow-xl">
+        <div class="card mx-auto w-96 bg-base-200 my-12 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">{tool.name}</h2>
                 <p>{tool.description}</p>
                 <p className='text-xl font-bold'>Available Quantity:{tool?.availableQuantity}</p>
                 <p className='text-xl font-bold'>Minimum Order Quantity:{tool?.minimumOrder}</p>
-                <p>{user.displayName}</p>
+
                 <form onSubmit={handleBuyNow} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-                    <input type="number" name='phoneNumber' placeholder="Plz Phone Number" class="input input-bordered input-primary w-full max-w-xs" />
-                    <input type="number" name='quantity' placeholder="Plz Enter Quantity" class="input input-bordered input-primary w-full max-w-xs" onChange={handleInputQuantity} />
+                    <input type="text" placeholder={user.displayName} class="input input-bordered input-primary w-full max-w-xs" readOnly />
+                    <input type="number" name='quantity' placeholder=" Enter Order Quantity " class="input input-bordered input-primary w-full max-w-xs" onChange={handleInputQuantity} />
 
                     <p className='text-red-400'>{quantityInput < minimumQuantity ? `Please give a minimum ${minimumQuantity}` : ""}</p>
                     <p className='text-red-400'>{quantityInput > availableQuantity ? `Please give a maximum ${availableQuantity}` : ""}</p>
-                    {/* 
-                    <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={disabled} /> */}
 
                     <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={quantityInput < minimumQuantity || quantityInput > availableQuantity ? true : false} />
 

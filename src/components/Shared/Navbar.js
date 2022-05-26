@@ -7,9 +7,9 @@ import auth from '../../firebase.init';
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
 
-    console.log(user)
     const logOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     }
 
     const { pathname } = useLocation();

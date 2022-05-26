@@ -11,13 +11,12 @@ const Portfolio = () => {
                         <h1 className='text-xl font-bold'>Email: rabiulim@gmail.com</h1>
                         <h1 className='text-xl font-bold'>education: I have complete SSC in 2019 with 4.56 GPA.Latest I have passed HSC from Science with GPA 4.5;</h1>
                         <h1 className='text-2xl font-bold pt-4'>List of My Skill:</h1>
-                        <ul className='list-disc text-xl font-bold pt-12'>
+                        <ul className=' text-xl font-bold pt-12'>
                             <li>html5</li>
                             <li>CSS3</li>
                             <li>Bootstrap5</li>
                             <li>Tailwind</li>
                             <li>JS</li>
-                            <li>ES6</li>
                             <li>ES6</li>
                             <li>Mongodb</li>
                             <li>Node.js</li>
