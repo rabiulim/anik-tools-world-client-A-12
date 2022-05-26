@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import aboutme from '../../images/aboutme.jpg'
 const Portfolio = () => {
     return (
         <div className='m-6'>

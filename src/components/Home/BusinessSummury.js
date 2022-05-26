@@ -1,42 +1,43 @@
-import React from 'react';
+import React from "react";
 
-const BusinessSummury = () => {
-    /**
-     * The business summary will show some summary of your business. There could be 3/4 summary on this summary section. For example, we served 100+ customers, 120M+ Annual revenue, 33K+ Reviews, 50+ tools, etc. Make sure you use some relevant icons here. You can use Hero Icons, React Icons, Font Awesome, Bootstrap Icons, Daisy UI or any icons that you like. To see an example, you will find an image in the images folder of this repository.
-     */
+const BusinessSummary = () => {
     return (
-        <div>
-            <div>
-                <h1 className='text-center text-4xl font-bold text-primary'>Business Summary</h1>
+        <div className="m-6">
+            <div className="mt-10">
+                <h2 className="uppercase text-center text-4xl font-bold text-primary mt-5">
+                    Millions Users trust us
+                </h2>
+                <p className="uppercase text-center font-semibold text-xl text-slate-500">
+                    try to understand user expedition
+                </p>
             </div>
+            <div className="stats w-full text-center stats-vertical lg:stats-horizontal shadow mt-6  bg-base-200 h-52 text-accent font-bold">
+                <div className="stat">
+                    <div className="stat-title ">Customers</div>
+                    <div className="stat-value text-primary">10k+</div>
+                    <div className="stat-desc">Jan 1st - Feb 1st</div>
+                </div>
 
+                <div className="stat">
+                    <div className="stat-title">Annual revenue</div>
+                    <div className="stat-value text-primary">120M+</div>
+                    <div className="stat-desc">↗︎ 400 (22%)</div>
+                </div>
 
-            <div>
-                <div class="stats stats-vertical lg:stats-horizontal shadow h-60">
+                <div className="stat">
+                    <div className="stat-title">Reviews</div>
+                    <div className="stat-value text-primary">33k+</div>
+                    <div className="stat-desc">↘︎ 90 (14%)</div>
+                </div>
 
-                    <div class="stat">
-                        <div class="stat-title">Downloads</div>
-                        <div class="stat-value">31K</div>
-                        <div class="stat-desc">Jan 1st - Feb 1st</div>
-                    </div>
-
-                    <div class="stat">
-                        <div class="stat-title">New Users</div>
-                        <div class="stat-value">4,200</div>
-                        <div class="stat-desc">↗︎ 400 (22%)</div>
-                    </div>
-
-                    <div class="stat ">
-                        <div class="stat-title">New Registers</div>
-                        <div class="stat-value">1,200</div>
-                        <div class="stat-desc">↘︎ 90 (14%)</div>
-                    </div>
-
+                <div className="stat">
+                    <div className="stat-title">Tools</div>
+                    <div className="stat-value text-primary">300+</div>
+                    <div className="stat-desc">↘︎ 90 (14%)</div>
                 </div>
             </div>
-
         </div>
     );
 };
 
-export default BusinessSummury;
+export default BusinessSummary;
