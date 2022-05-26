@@ -2,7 +2,7 @@ import React from 'react';
 
 const Review = ({ review }) => {
     return (
-        <div class="card w-84 bg-primary text-primary-content">
+        <div class="card w-84 bg-accent text-primary-content">
             <div class="card-body">
                 <h2 class="card-title">{review.userName}</h2>
                 <p className='text-xl'>{review.description}</p>

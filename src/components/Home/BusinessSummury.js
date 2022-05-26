@@ -7,10 +7,12 @@ const BusinessSummury = () => {
     return (
         <div>
             <div>
-                <h1 className='text-center text-xl'>Business Summary</h1>
+                <h1 className='text-center text-4xl font-bold text-primary'>Business Summary</h1>
             </div>
-            <div className='flex items-center'>
-                <div class="stats stats-vertical lg:stats-horizontal shadow">
+
+
+            <div>
+                <div class="stats stats-vertical lg:stats-horizontal shadow h-60">
 
                     <div class="stat">
                         <div class="stat-title">Downloads</div>
@@ -24,7 +26,7 @@ const BusinessSummury = () => {
                         <div class="stat-desc">↗︎ 400 (22%)</div>
                     </div>
 
-                    <div class="stat">
+                    <div class="stat ">
                         <div class="stat-title">New Registers</div>
                         <div class="stat-value">1,200</div>
                         <div class="stat-desc">↘︎ 90 (14%)</div>
@@ -32,6 +34,7 @@ const BusinessSummury = () => {
 
                 </div>
             </div>
+
         </div>
     );
 };

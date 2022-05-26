@@ -17,7 +17,7 @@ const Navbar = () => {
     const navItem = <>
 
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/portfolio'>My Portfolio</Link></li>
         {
             user && <li><Link to="/dashboard">Dashboard</Link></li>
         }
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </label>)}
 
             </div>
-            <NavLink to="/" className="btn btn-ghost mx-auto normal-case text-xl">Anik Tools World</NavLink>
+            <NavLink to="/" className="btn btn-ghost mx-auto normal-case text-xl">Anik Parts World</NavLink>
             <div className="navbar-end">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
