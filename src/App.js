@@ -16,6 +16,7 @@ import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Portfolio from './components/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/portfolio' element={<Portfolio />}></Route>
         <Route path='/tool/:toolId' element={<RequireAuth><ToolBuy /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='/dashboard/myorders' element={<MyOrder></MyOrder>}></Route>
