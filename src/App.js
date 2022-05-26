@@ -14,6 +14,8 @@ import SignUp from './components/Login/SignUp';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );

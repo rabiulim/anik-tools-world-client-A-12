@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const ToolBuy = () => {
@@ -10,11 +11,15 @@ const ToolBuy = () => {
 
     const [tool, setTool] = useState({})
 
-    const [isDisabled, setDisabled] = useState(false);
+    // const [disabled, setDisabled] = useState(true)
 
+    const [quantityInput, setQuantityInput] = useState(50)
 
+    const [error, setError] = useState('')
+    console.log(quantityInput);
 
-
+    const minimumQuantity = parseInt(tool?.minimumOrder);
+    const availableQuantity = parseInt(tool?.availableQuantity);
     useEffect(() => {
         const url = `http://localhost:5000/tool/${toolId}`
         fetch(url)
@@ -22,17 +27,40 @@ const ToolBuy = () => {
             .then(data => setTool(data))
     }, [])
 
+    const handleInputQuantity = (e) => {
+        setQuantityInput(e.target.value)
+
+
+
+        // if (quantityInput < minimumQuantity) {
+        //     // setDisabled(true);
+        //     setError('This is error')
+        // }
+        // // else if (quantityInput === 0) {
+        // //     setError('')
+        // // }
+        // else {
+        //     // setDisabled(false);
+
+        //     setError('')
+        // }
+    }
+
+
+
+
+
+
     const handleBuyNow = event => {
         event.preventDefault();
-        const minimumQuantity = tool.minimumOrder;
-        const availableQuantity = tool.availableQuantity;
         const orderQuantity = parseInt(event.target.quantity.value);
-        if (orderQuantity < minimumQuantity || orderQuantity > availableQuantity) {
-            setDisabled(true)
-            alert(`plz Minimum Quantity:${minimumQuantity}  available Quantity:${availableQuantity}`)
-            return
-        }
-        const updateQuantity = minimumQuantity + orderQuantity
+        // if (orderQuantity < minimumQuantity || orderQuantity > availableQuantity) {
+        //     setDisabled(true)
+        //     toast(`plz Minimum Quantity:${minimumQuantity}  available Quantity:${availableQuantity}`)
+        //     event.reset();
+        //     return
+        // }
+
         const product = tool.name;
         const price = tool.price;
         const userName = user.displayName;
@@ -66,8 +94,14 @@ const ToolBuy = () => {
                 <p>{user.displayName}</p>
                 <form onSubmit={handleBuyNow} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
                     <input type="number" name='phoneNumber' placeholder="Plz Phone Number" class="input input-bordered input-primary w-full max-w-xs" />
-                    <input type="number" name='quantity' placeholder="Plz Enter Quantity" class="input input-bordered input-primary w-full max-w-xs" />
-                    <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={isDisabled} />
+                    <input type="number" name='quantity' placeholder="Plz Enter Quantity" class="input input-bordered input-primary w-full max-w-xs" onChange={handleInputQuantity} />
+
+                    <p className='text-red-400'>{quantityInput < minimumQuantity ? `Please give a minimum ${minimumQuantity}` : ""}</p>
+                    <p className='text-red-400'>{quantityInput > availableQuantity ? `Please give a maximum ${availableQuantity}` : ""}</p>
+                    {/* 
+                    <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={disabled} /> */}
+
+                    <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={quantityInput < minimumQuantity || quantityInput > availableQuantity ? true : false} />
 
                 </form>
             </div>

@@ -12,10 +12,9 @@ const MyOrder = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [orders])
+    }, [])
 
     const handleOrderDelete = (id) => {
-        console.log(id)
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
