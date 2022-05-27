@@ -26,7 +26,7 @@ const ManageProducts = () => {
                     <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Name</th>
+                            <th>Product Name</th>
                             <th>Price</th>
                             <th>Action</th>
                         </tr>

@@ -22,6 +22,7 @@ import MakeAdmin from './components/Dashboard/MakeAdmin';
 import RequireAdmin from './components/Login/RequireAdmin';
 import AddProduct from './components/Dashboard/AddProduct';
 import ManageProducts from './components/Dashboard/ManageProducts';
+import Payment from './components/Dashboard/Payment';
 
 function App() {
   return (
@@ -35,8 +36,9 @@ function App() {
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
         <Route path='/tool/:toolId' element={<RequireAuth><ToolBuy /></RequireAuth>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='myorders' element={<MyOrder></MyOrder>}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='myreviews' element={<MyReviews />} ></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='allorders' element={<AllOrders />}></Route>

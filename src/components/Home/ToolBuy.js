@@ -76,7 +76,7 @@ const ToolBuy = () => {
                 <p className='text-xl font-bold'>Minimum Order Quantity:{tool?.minimumOrder}</p>
 
                 <form onSubmit={handleBuyNow} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-                    <input type="text" placeholder={user.displayName} class="input input-bordered input-primary w-full max-w-xs" readOnly />
+
                     <input type="number" name='quantity' placeholder=" Enter Order Quantity " class="input input-bordered input-primary w-full max-w-xs" onChange={handleInputQuantity} />
 
                     <p className='text-red-400'>{quantityInput < minimumQuantity ? `Please give a minimum ${minimumQuantity}` : ""}</p>

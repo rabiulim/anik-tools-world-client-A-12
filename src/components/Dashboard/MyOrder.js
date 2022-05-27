@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
@@ -60,25 +60,26 @@ const MyOrder = () => {
 
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Name</th>
+                            <th>sl</th>
                             <th>Product</th>
                             <th>Price</th>
                             <th>Order Quantity</th>
                             <th>Payment</th>
-                            <th>Delet</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            orders.map(order => <tr key={order._id}>
-                                <th>1</th>
-                                <td>{order.userName}</td>
+                            orders.map((order, index) => <tr key={order._id}>
+                                <th>{index + 1}</th>
                                 <td>{order.product}</td>
                                 <td>{order.price}</td>
                                 <td>{order.orderQuantity}</td>
-                                <td><button className='btn btn-sm'>Pay Now</button></td>
+                                <td>
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-sm'>Pay Now</button></Link>}
+                                    {(order.price && order.paid) && <p className='text-succes font-bold'>paid</p>}
+                                </td>
                                 <td><button onClick={() => handleOrderDelete(order._id)} className='btn btn-sm'>Delete</button></td>
 
                             </tr>)

@@ -14,14 +14,14 @@ const AllOrders = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='mt-12'>
             <h1 className='text-4xl'>All orders:{allorders.length}</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
 
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>SL</th>
                             <th>Name</th>
                             <th>Job</th>
                             <th>Favorite Color</th>
@@ -29,7 +29,9 @@ const AllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            allorders.map(order => <AllOrdersRow key={order._id} order={order}
+                            allorders.map((order, index) => <AllOrdersRow key={order._id}
+                                index={index}
+                                order={order}
                             ></AllOrdersRow>)
                         }
                     </tbody>
