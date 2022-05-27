@@ -13,9 +13,8 @@ const ToolBuy = () => {
 
     // const [disabled, setDisabled] = useState(true)
 
-    const [quantityInput, setQuantityInput] = useState(50)
+    const [quantityInput, setQuantityInput] = useState(tool.minimumQuantity)
 
-    const [error, setError] = useState('')
     console.log(quantityInput);
 
     const minimumQuantity = parseInt(tool?.minimumOrder);
@@ -29,21 +28,6 @@ const ToolBuy = () => {
 
     const handleInputQuantity = (e) => {
         setQuantityInput(e.target.value)
-
-
-
-        // if (quantityInput < minimumQuantity) {
-        //     // setDisabled(true);
-        //     setError('This is error')
-        // }
-        // // else if (quantityInput === 0) {
-        // //     setError('')
-        // // }
-        // else {
-        //     // setDisabled(false);
-
-        //     setError('')
-        // }
     }
 
 
@@ -78,7 +62,7 @@ const ToolBuy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data)
-                alert('orders  successfully added')
+                toast.success('orders  successfully added')
                 event.target.reset();
             })
     }
@@ -98,7 +82,7 @@ const ToolBuy = () => {
                     <p className='text-red-400'>{quantityInput < minimumQuantity ? `Please give a minimum ${minimumQuantity}` : ""}</p>
                     <p className='text-red-400'>{quantityInput > availableQuantity ? `Please give a maximum ${availableQuantity}` : ""}</p>
 
-                    <input type="submit" value="Buy Now" className="btn btn-secondary w-full max-w-xs" disabled={quantityInput < minimumQuantity || quantityInput > availableQuantity ? true : false} />
+                    <input type="submit" value="Order Now" className="btn btn-secondary w-full max-w-xs" disabled={quantityInput < minimumQuantity || quantityInput > availableQuantity ? true : false} />
 
                 </form>
             </div>

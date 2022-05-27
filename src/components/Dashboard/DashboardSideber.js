@@ -19,13 +19,18 @@ const DashboardSideber = ({ children }) => {
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
 
-                    <li><NavLink to='/dashboard/myprofile'>My Profile</NavLink></li>
-                    <li><NavLink to='/dashboard/myorders'>My Orders</NavLink></li>
-                    <li><NavLink to='/dashboard/myreviews'>Add Reviews</NavLink></li>
-                    <li><NavLink to='/dashboard/allorders'>All Orders</NavLink></li>
-                    {admin && <>
+
+                    {admin ? <>
+
+                        <li><NavLink to='/dashboard/myprofile'>My Profile</NavLink></li>
+                        <li><NavLink to='/dashboard/allorders'>Manage All Orders</NavLink></li>
                         <li><NavLink to='/dashboard/make-admin'>Make Admin</NavLink></li>
-                        <li><NavLink to='/dashboard/add-product'>Add Product</NavLink></li>
+                        <li><NavLink to='/dashboard/add-product'>Add A Product</NavLink></li>
+                        <li><NavLink to='/dashboard/manage-products'>Manage Products</NavLink></li>
+                    </> : <>
+                        <li><NavLink to='/dashboard/myprofile'>My Profile</NavLink></li>
+                        <li><NavLink to='/dashboard/myorders'>My Orders</NavLink></li>
+                        <li><NavLink to='/dashboard/myreviews'>Add Reviews</NavLink></li>
                     </>}
 
                 </ul>
