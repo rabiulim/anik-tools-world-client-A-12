@@ -13,7 +13,7 @@ const MyReviews = () => {
         console.log(userName)
         const reviews = { userName, description, ratings }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://anik-parts-world.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

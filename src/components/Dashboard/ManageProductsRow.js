@@ -6,7 +6,7 @@ const ManageProductsRow = ({ product, index, refetch }) => {
     const handleProductDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/tool/${id}`, {
+            fetch(`https://anik-parts-world.herokuapp.com/tool/${id}`, {
                 method: 'Delete',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,7 +25,7 @@ const ManageProductsRow = ({ product, index, refetch }) => {
                     }
                 })
         }
-        fetch(`http://localhost:5000/tool/${id}`, {
+        fetch(`https://anik-parts-world.herokuapp.com/tool/${id}`, {
             method: 'Delete',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

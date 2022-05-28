@@ -6,7 +6,7 @@ import ManageProductsRow from './ManageProductsRow';
 
 const ManageProducts = () => {
 
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/tool', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://anik-parts-world.herokuapp.com/tool', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

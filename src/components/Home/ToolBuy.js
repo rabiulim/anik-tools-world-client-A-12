@@ -20,7 +20,7 @@ const ToolBuy = () => {
     const minimumQuantity = parseInt(tool?.minimumOrder);
     const availableQuantity = parseInt(tool?.availableQuantity);
     useEffect(() => {
-        const url = `http://localhost:5000/tool/${toolId}`
+        const url = `https://anik-parts-world.herokuapp.com/tool/${toolId}`
         fetch(url, {
             method: 'GET',
             headers: {
@@ -56,7 +56,7 @@ const ToolBuy = () => {
         const userName = user.displayName;
         const email = user.email;
         const orderInfo = { userName, description, email, orderQuantity, product, price }
-        const url = 'http://localhost:5000/order'
+        const url = 'https://anik-parts-world.herokuapp.com/order'
         fetch(url, {
             method: "POST",
             headers: {

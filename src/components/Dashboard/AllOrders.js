@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import AllOrdersRow from './AllOrdersRow';
 
 const AllOrders = () => {
-    const { data: allorders, isLoading } = useQuery('allOrders', () => fetch('http://localhost:5000/allorder', {
+    const { data: allorders, isLoading } = useQuery('allOrders', () => fetch('https://anik-parts-world.herokuapp.com/allorder', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -13,7 +13,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/order/${user.email}`
+            const url = `https://anik-parts-world.herokuapp.com/order/${user.email}`
             fetch(url, {
                 method: 'GET',
                 headers: {
@@ -38,7 +38,7 @@ const MyOrder = () => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://anik-parts-world.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

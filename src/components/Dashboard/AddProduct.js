@@ -12,7 +12,7 @@ const AddProduct = () => {
         const img = e.target.img.value;
         const product = { name, img, price, minimumOrder, availableQuantity, description }
         console.log(product)
-        const url = 'http://localhost:5000/tool'
+        const url = 'https://anik-parts-world.herokuapp.com/tool'
         fetch(url, {
             method: "POST",
             headers: {
