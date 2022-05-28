@@ -47,9 +47,10 @@ const ToolBuy = () => {
 
         const product = tool.name;
         const price = tool.price;
+        const description = tool.description
         const userName = user.displayName;
         const email = user.email;
-        const orderInfo = { userName, email, orderQuantity, product, price }
+        const orderInfo = { userName, description, email, orderQuantity, product, price }
         const url = 'http://localhost:5000/order'
         fetch(url, {
             method: "POST",
@@ -76,7 +77,7 @@ const ToolBuy = () => {
                 <p className='text-xl font-bold'>Minimum Order Quantity:{tool?.minimumOrder}</p>
 
                 <form onSubmit={handleBuyNow} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-
+                    <input type="text" name='location' placeholder='Enter Your Location' className='input input-bordered input-primary w-full max-w-xs' required />
                     <input type="number" name='quantity' placeholder=" Enter Order Quantity " class="input input-bordered input-primary w-full max-w-xs" onChange={handleInputQuantity} />
 
                     <p className='text-red-400'>{quantityInput < minimumQuantity ? `Please give a minimum ${minimumQuantity}` : ""}</p>

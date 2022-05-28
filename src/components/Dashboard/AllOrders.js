@@ -14,17 +14,18 @@ const AllOrders = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='mt-12'>
-            <h1 className='text-4xl'>All orders:{allorders.length}</h1>
+        <div className='min-h-full'>
+            <h1 className='text-4xl text-center mb-6'>All orders:{allorders.length}</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
 
                     <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Product</th>
+                            <th>Order Quantity</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

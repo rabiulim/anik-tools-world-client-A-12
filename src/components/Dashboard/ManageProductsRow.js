@@ -4,7 +4,27 @@ import { toast } from 'react-toastify';
 const ManageProductsRow = ({ product, index, refetch }) => {
     const { _id, name, price } = product;
     const handleProductDelete = id => {
-
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if (proceed) {
+            fetch(`http://localhost:5000/tool/${id}`, {
+                method: 'Delete',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    if (res.status === 403) {
+                        toast.error('Failed to Delete')
+                    }
+                    return res.json()
+                })
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        refetch()
+                        toast.success('Successfully Delete')
+                    }
+                })
+        }
         fetch(`http://localhost:5000/tool/${id}`, {
             method: 'Delete',
             headers: {

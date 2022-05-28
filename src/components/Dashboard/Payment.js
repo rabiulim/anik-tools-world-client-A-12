@@ -25,12 +25,13 @@ const Payment = () => {
                     <h2 className='card-title'>
                         Pay for {order.product}
                     </h2>
-                    <p>Your Price: ${order.price}</p>
+                    <p>{order.description}</p>
+                    <p className='text-xl'>Your Price: ${order.price}</p>
                 </div>
             </div>
             <div className='card w-50 max-w-md bg-base-200 shadow-xl'>
                 <div className='card-body '>
-
+                    <button className='btn btn-sm'>Pay Now</button>
                 </div>
             </div>
         </div>

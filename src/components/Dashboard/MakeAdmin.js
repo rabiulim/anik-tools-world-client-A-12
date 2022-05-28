@@ -15,21 +15,21 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h1 className='text-4xl'>Admin Quantity:{users.length}</h1>
+            <h1 className='text-4xl mb-8'>You can Make Admin here!!</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
 
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>sl</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <MakeAdminRow key={user._id} user={user}
+                            users.map((user, index) => <MakeAdminRow key={user._id} user={user}
+                                index={index}
                                 refetch={refetch}
                             ></MakeAdminRow>)
                         }
