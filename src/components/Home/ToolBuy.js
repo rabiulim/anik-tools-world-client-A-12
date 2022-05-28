@@ -21,7 +21,12 @@ const ToolBuy = () => {
     const availableQuantity = parseInt(tool?.availableQuantity);
     useEffect(() => {
         const url = `http://localhost:5000/tool/${toolId}`
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])
@@ -55,7 +60,8 @@ const ToolBuy = () => {
         fetch(url, {
             method: "POST",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "authorizaton": `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(orderInfo)
 
